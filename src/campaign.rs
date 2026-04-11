@@ -105,6 +105,72 @@ pub fn all_campaigns() -> Vec<Campaign> {
             ],
         },
         Campaign {
+            id: "peak_output",
+            name: "Peak Output",
+            tagline: "The host is mid-run. Confirm the aerobic cascade is holding.",
+            description: "The host entered sustained aerobic exercise eleven minutes ago. \
+                          Heart rate is 155 bpm and climbing. Skeletal muscle oxygen demand \
+                          has tripled. The adrenal medulla is flooding the bloodstream with \
+                          epinephrine. Navigate to the four sites driving the exercise response — \
+                          adrenal glands, heart muscle, lungs, and skeletal muscle — confirm the \
+                          aerobic cascade is intact, and return to the left ventricle.",
+            objectives: &["adrenal_glands", "heart_muscle", "lungs", "skeletal_muscle"],
+            win_node: "left_ventricle",
+            host_profile: Some(HostProfile::Exercising),
+            intro: &[
+                "Pilot. This is HELIX. Injection confirmed. The host is in motion.",
+                "Current telemetry: heart rate 155 bpm, systolic 168, respiratory rate elevated. \
+                 Epinephrine detected in bloodstream. Blood flow has redistributed — \
+                 gut perfusion down, skeletal muscle perfusion up threefold.",
+                "Objective: verify the aerobic cascade at four primary sites. \
+                 Adrenal glands, heart muscle, lungs, skeletal muscle. Then return. \
+                 Note: glucose is scarce — muscle is consuming it faster than the liver \
+                 can release it. Oxygen is abundant. Plan accordingly.",
+                "Dr. Yun finds this one straightforward. Theo is excited about the mitochondria.",
+            ],
+            win_text: &[
+                "Aerobic cascade confirmed. All four sites nominal.",
+                "The adrenals fired. The heart adapted. The lungs delivered. \
+                 The muscle burned clean. Every system performed exactly as designed.",
+                "The host doesn't know you were here. They just know the run felt good.",
+            ],
+        },
+        Campaign {
+            id: "cortisol_storm",
+            name: "Cortisol Storm",
+            tagline: "Acute psychological stress. The HPA axis has taken over.",
+            description: "The host is experiencing acute psychosocial stress — sustained, \
+                          uncontrollable, and ongoing. The hypothalamic-pituitary-adrenal axis \
+                          is fully activated. Cortisol is elevated and climbing. Epinephrine \
+                          is surging. Blood glucose is high. Immune surveillance is suppressed. \
+                          Navigate the stress circuit — brain, adrenal glands, heart muscle — \
+                          map the hormonal cascade, and return to the left ventricle before \
+                          the sustained cortisol load begins causing damage.",
+            objectives: &["brain", "adrenal_glands", "heart_muscle"],
+            win_node: "left_ventricle",
+            host_profile: Some(HostProfile::Stressed),
+            intro: &[
+                "Pilot. This is HELIX. Injection confirmed. Biochemical environment is abnormal.",
+                "Cortisol: elevated. Epinephrine: elevated. Blood glucose: high. \
+                 Heart rate 94 bpm. Systolic 148. The HPA axis is running a full activation — \
+                 hypothalamus signaled CRH, pituitary released ACTH, adrenals are responding.",
+                "Objective: reach the brain, the adrenal glands, and the heart muscle. \
+                 Map the cascade at each site. Then return. \
+                 The stress response is not inherently pathological — but this one has been \
+                 running for a while. Duration matters.",
+                "Dr. Yun is not comfortable with how long this has been active. \
+                 Theo is trying to stay focused.",
+            ],
+            win_text: &[
+                "Stress circuit mapped. Data logged.",
+                "The brain initiated it. The adrenals executed it. The heart bore the cost. \
+                 The cascade is textbook — but sustained cortisol at this level suppresses \
+                 immune function, degrades hippocampal neurons, and accelerates arterial aging.",
+                "The host is not in danger today. But if this continues, they will be. \
+                 That is not your problem to solve. It is theirs.",
+            ],
+        },
+        Campaign {
             id: "coronary",
             name: "Coronary Crisis",
             tagline: "Myocardial infarction in progress. Time is muscle.",

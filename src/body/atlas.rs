@@ -540,7 +540,7 @@ pub fn build_circuit() -> Vec<CircuitNode> {
                       blood pressure. Renal artery stenosis (usually atherosclerotic) causes \
                       renovascular hypertension — a treatable but often-missed cause of \
                       high blood pressure.",
-            connections: &["descending_aorta", "kidneys"],
+            connections: &["descending_aorta", "kidneys", "adrenal_glands"],
             threat_level: ThreatLevel::Low,
             atp_cost: 2,
             glucose_yield: 0,
@@ -587,6 +587,36 @@ pub fn build_circuit() -> Vec<CircuitNode> {
             threat_level: ThreatLevel::Minimal,
             atp_cost: 2,
             glucose_yield: 0,
+            oxygen_yield: 0,
+            is_checkpoint: false,
+        },
+
+        CircuitNode {
+            id: "adrenal_glands",
+            name: "Adrenal Glands",
+            node_type: NodeType::Organ,
+            description: "Two triangular glands capping the kidneys. \
+                          The cortex is pale and layered; the medulla at the center \
+                          is dense with chromaffin cells. Something is being secreted — \
+                          HELIX is picking up a biochemical gradient.",
+            biology: "Each adrenal gland has two functionally distinct regions. \
+                      The cortex (mesodermal origin) secretes steroid hormones: \
+                      cortisol (stress response, gluconeogenesis, immune suppression) \
+                      from the zona fasciculata; aldosterone (sodium retention, blood pressure) \
+                      from the zona glomerulosa; and androgens from the zona reticularis. \
+                      The medulla (neural crest origin — essentially a modified sympathetic \
+                      ganglion) secretes catecholamines: epinephrine (adrenaline, ~80%) and \
+                      norepinephrine (~20%) directly into the bloodstream within seconds of \
+                      sympathetic activation. The HPA axis (hypothalamus → pituitary → \
+                      adrenal cortex) drives cortisol release over minutes to hours; \
+                      the sympathoadrenal axis drives epinephrine release in seconds. \
+                      Together they coordinate the full stress response: increased heart rate, \
+                      vasodilation in muscle, vasoconstriction in gut, glucose mobilization, \
+                      and suppression of non-essential functions.",
+            connections: &["renal_artery", "renal_vein"],
+            threat_level: ThreatLevel::Low,
+            atp_cost: 5,
+            glucose_yield: 6,
             oxygen_yield: 0,
             is_checkpoint: false,
         },
